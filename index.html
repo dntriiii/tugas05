@@ -1,0 +1,197 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Halaman Admin</title>  
+    <!-- CSS File -->  
+    <link rel="stylesheet" href="style.css">  
+    <!-- Boxicons CSS -->  
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Tambahkan ini ke style.css */
+        .animated-up {
+            opacity: 0; /* Mulai dari transparan */
+            transform: translateY(50px); /* Posisi awal 50px ke bawah */
+            transition: opacity 0.8s ease, transform 0.8s ease; /* Transisi untuk efek animasi */
+        }
+    </style>
+</head>  
+<body>  
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo">DE</div>
+            <span class="logo-name"></span>
+            <i class="fas fa-bars toggle"></i>
+        </div>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search...">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span class="link-name">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-links">
+                <a href="#">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="link-name">Revenue</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-bell"></i>
+                    <span class="link-name">Notifications</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="link-name">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-heart"></i>
+                    <span class="link-name">Likes</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-wallet"></i>
+                    <span class="link-name">Wallets</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bottom-content">
+            <li>
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="link-name">Logout</span>
+                </a>
+            </li>
+            <li class="mode">
+                <a href="#">
+                    <i class="fas fa-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+                <div class="mode-toggle">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </div>
+    </div>
+
+    
+    <main class="main-content">
+        <header class="header">  
+            <div class="search-container">  
+                <input type="text" placeholder="Search here..." class="search-input">  
+                <i class="bx bx-search icon"></i>  
+            </div>  
+            <div class="header-icons"> 
+                <i class="bx bx-bell icon"></i>  
+                <i class="bx bx-message-rounded icon"></i>  
+                <div class="profile-icon">  
+                    <img src="image2.JPG" alt="Profile" />  
+                </div>  
+            </div>  
+        </header>
+
+        <section class="content">
+            <div class="card-container">  
+                <div class="card blue animated-up">  
+                    <h2>Total Income</h2>  
+                    <p class="amount">$ 579,000</p>  
+                    <p class="saved">Saved 25%</p>  
+                </div>  
+                <div class="card light-blue animated-up">  
+                    <h2>Total Expenses</h2>  
+                    <p class="amount">$ 79,000</p>  
+                    <p class="saved">Saved 25%</p>  
+                </div>  
+                <div class="card purple animated-up">  
+                    <h2>Cash on Hand</h2>  
+                    <p class="amount">$ 92,000</p>  
+                    <p class="saved">Saved 25%</p>  
+                </div>  
+                <div class="card green animated-up">  
+                    <h2>Net Profit Margin</h2>  
+                    <p class="amount">$ 179,000</p>  
+                    <p class="saved">Saved 65%</p>  
+                </div>  
+            </div>  
+
+            <div class="charts-container">  
+                <div class="chart animated-up">  
+                    <h2>AP and AR Balance</h2>  
+                    <p>Avg. $5,309</p>  
+                    <div class="chart-controls">  
+                        <select>  
+                            <option>Monthly</option>  
+                            <option>Yearly</option>  
+                        </select>  
+                        <select>  
+                            <option>Last Year</option>  
+                            <option>This Year</option>  
+                        </select>  
+                    </div>  
+                    <div class="chart-placeholder animated-up">
+                        <canvas id="myBarChart"></canvas> <!-- script.js -->
+                    </div>  
+                </div>  
+                
+                <div class="budget-container">  
+                    <div class="budget animated-up">  
+                        <h2>% of Income Budget</h2>  9295
+                        <div class="pie-chart animated-up">
+                            <canvas id="myPieChart1"></canvas> <!-- script.js -->
+                        </div>
+                        <p>Balance: $18,570</p>  
+                        <a href="#">View Full Report</a>  
+                    </div>  
+                    <div class="budget animated-up">  
+                        <h2>% of Expenses Budget</h2>  
+                        <div class="pie-chart animated-up">
+                            <canvas id="myPieChart2"></canvas> <!-- script.js -->
+                        </div>
+                        <p>Balance: $18,570</p>  
+                        <a href="#">View Full Report</a>  
+                    </div>  
+                </div>  
+            </div>
+
+
+
+        </section>  
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Efek muncul dari bawah ke atas untuk semua elemen dengan kelas animated-up
+            $('.animated-up').css({
+                opacity: 0,
+                transform: 'translateY(50px)' // Posisi awal 50px ke bawah
+            }).animate({
+                opacity: 1,
+                transform: 'translateY(0px)' // Kembali ke posisi semula
+            }, {
+                duration: 800,
+                step: function(now, fx) {
+                    if (fx.prop === 'transform') {
+                        $(this).css('transform', `translateY(${50 - now * 50}px)`);
+                    }
+                }
+            });
+        });
+    </script>
+</body>  
+</html>
